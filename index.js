@@ -22,7 +22,7 @@ class MiScale extends EventEmitter {
         // Assume only single service is available on scale.
         scale.svcUUID = peripheral.advertisement.serviceData[0].uuid;
         scale.svcData = peripheral.advertisement.serviceData[0].data;
-        scale.manufactureData = peripheral.advertisement.manufacturerData;
+        scale.manufacturerData = peripheral.advertisement.manufacturerData;
         scale.txPowerLevel = peripheral.advertisement.txPowerLevel;
 
         //Parse service data.
