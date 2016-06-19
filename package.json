@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/perillamint/node-xiaomi-scale/issues"
   },
-  "homepage": "https://github.com/perillamint/node-xiaomi-scale#readme"
+  "homepage": "https://github.com/perillamint/node-xiaomi-scale#readme",
+  "dependencies": {
+    "noble": "^1.6.0"
+  },
+  "devDependencies": {
+    "mocha": ""
+  }
 }
