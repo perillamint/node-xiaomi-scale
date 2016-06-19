@@ -1,0 +1,1 @@
+# node-xiaomi-scale

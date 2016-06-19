@@ -1,0 +1,24 @@
+{
+  "name": "node-xiaomi-scale",
+  "version": "0.0.1",
+  "description": "Node.JS library for Mi scale.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perillamint/node-xiaomi-scale.git"
+  },
+  "keywords": [
+    "xiaomi",
+    "ble",
+    "scale"
+  ],
+  "author": "perillamint",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/perillamint/node-xiaomi-scale/issues"
+  },
+  "homepage": "https://github.com/perillamint/node-xiaomi-scale#readme"
+}
