@@ -7,6 +7,7 @@ class MiScale extends EventEmitter {
         let self = this;
 
         this._macAddr = macAddr;
+        this._scales = new Array();
 
         noble.on('discover', function (foo) {
             self._nobleDiscoverListener(foo);
@@ -46,7 +47,13 @@ class MiScale extends EventEmitter {
             scale.weight /= 2;
         }
 
-        this.emit('data', scale);
+        if(!this._scales[scale.address] ||
+           this._scales[scale.address].weight != scale.weight ||
+           this._scales[scale.address].isStabilized != scale.isStabilized ||
+           this._scales[scale.address].loadRemoved != scale.loadRemoved) {
+            this._scales[scale.address] = scale;
+            this.emit('data', scale);
+        }
     };
 
     _nobleDiscoverListener(peripheral) {
