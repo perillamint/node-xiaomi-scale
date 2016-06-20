@@ -42,6 +42,7 @@ class MiScale extends EventEmitter {
         }
 
         scale.weight = svcData.readUInt16LE(1) / 100;
+        scale.sequence = svcData.readUInt16BE(8);
 
         if(scale.unit === "kg") { //Convert chinese Catty to kg.
             scale.weight /= 2;
@@ -50,7 +51,8 @@ class MiScale extends EventEmitter {
         if(!this._scales[scale.address] ||
            this._scales[scale.address].weight != scale.weight ||
            this._scales[scale.address].isStabilized != scale.isStabilized ||
-           this._scales[scale.address].loadRemoved != scale.loadRemoved) {
+           this._scales[scale.address].loadRemoved != scale.loadRemoved ||
+           this._scales[scale.address].sequence != scale.sequence) {
             this._scales[scale.address] = scale;
             this.emit('data', scale);
         }

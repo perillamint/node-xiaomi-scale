@@ -33,3 +33,6 @@ If weight on scale is removed, This flag will set to true.
 
 #### scale.unit
 Measurement unit.
+
+#### scale.sequence
+Sequence number.
