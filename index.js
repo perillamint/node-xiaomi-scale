@@ -24,6 +24,15 @@ class MiScale extends EventEmitter {
         scale.svcData = peripheral.advertisement.serviceData[0].data;
         scale.manufacturerData = peripheral.advertisement.manufacturerData;
 
+        //Is it duplicated packet?
+        if(this._scales[scale.address] &&
+           this._scales[scale.address].svcData.compare(scale.svcData) == 0) {
+            return;
+        }
+
+        //Save scale object in duplication lookup table.
+        this._scales[scale.address] = scale;
+
         //Parse service data.
         let svcData = scale.svcData;
 
@@ -47,11 +56,7 @@ class MiScale extends EventEmitter {
             scale.weight /= 2;
         }
 
-        if(!this._scales[scale.address] ||
-           this._scales[scale.address].svcData.compare(scale.svcData) != 0) {
-            this._scales[scale.address] = scale;
-            this.emit('data', scale);
-        }
+        this.emit('data', scale);
     };
 
     _nobleDiscoverListener(peripheral) {
