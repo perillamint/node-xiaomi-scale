@@ -48,10 +48,7 @@ class MiScale extends EventEmitter {
         }
 
         if(!this._scales[scale.address] ||
-           this._scales[scale.address].weight != scale.weight ||
-           this._scales[scale.address].isStabilized != scale.isStabilized ||
-           this._scales[scale.address].loadRemoved != scale.loadRemoved ||
-           this._scales[scale.address].sequence != scale.sequence) {
+           this._scales[scale.address].svcData.compare(scale.svcData) != 0) {
             this._scales[scale.address] = scale;
             this.emit('data', scale);
         }
