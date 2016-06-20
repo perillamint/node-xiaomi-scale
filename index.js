@@ -23,7 +23,6 @@ class MiScale extends EventEmitter {
         scale.svcUUID = peripheral.advertisement.serviceData[0].uuid;
         scale.svcData = peripheral.advertisement.serviceData[0].data;
         scale.manufacturerData = peripheral.advertisement.manufacturerData;
-        scale.txPowerLevel = peripheral.advertisement.txPowerLevel;
 
         //Parse service data.
         let svcData = scale.svcData;
