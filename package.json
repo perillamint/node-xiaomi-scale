@@ -1,6 +1,6 @@
 {
   "name": "node-xiaomi-scale",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Node.JS library for Mi scale.",
   "main": "index.js",
   "scripts": {
