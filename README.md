@@ -36,3 +36,6 @@ Measurement unit.
 
 #### scale.sequence
 Sequence number.
+
+## Thanks to
+https://github.com/chaeplin, who built Xiaomi scale protocol parser prototype with Python. (https://github.com/chaeplin/Xiaomi_scale_scan)
