@@ -1,4 +1,5 @@
 # node-xiaomi-scale
+![Dependencies](https://david-dm.org/perillamint/node-xiaomi-scale.svg)
 
 ## MiScale class
 ### Constructor
